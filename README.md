@@ -13,22 +13,29 @@ JasperReports for NodeJS
 ## Usage (in AdonisJS)
 
 ```js
-async jasper ({ response }) {
-    const jasper = new JasperNode(Helpers.appRoot('tmp/JasperNode'))
-    let inputFile = Helpers.appRoot('tmp/JasperNode/params.jasper')
-    let outputFile = Helpers.appRoot('tmp/JasperNode/output')
+'use strict'
 
-    let parameters = {
-        myString: jasper.quotes('My String'),
-        myInt: 100,
-        myImage: jasper.quotes('sample.jpg')
-    }
-    
-    try {   
-        const pathFile = await jasper.process(inputFile, outputFile, parameters).execute()
-        return response.send(pathFile)
-    } catch (e) {
-        return response.send(e)
+const Helpers = use('Helpers')
+const JasperNode = require('jaspernode')
+
+class JasperController {
+    async jasper ({ response }) {
+        const jasper = new JasperNode(Helpers.appRoot('tmp/JasperNode'))
+        let inputFile = Helpers.appRoot('tmp/JasperNode/params.jasper')
+        let outputFile = Helpers.appRoot('tmp/JasperNode/output')
+
+        let parameters = {
+            myString: jasper.quotes('My String'),
+            myInt: 100,
+            myImage: jasper.quotes('sample.jpg')
+        }
+        
+        try {   
+            const pathFile = await jasper.process(inputFile, outputFile, parameters).execute()
+            return response.send(pathFile)
+        } catch (e) {
+            return response.send(e)
+        }
     }
 }
 ```
