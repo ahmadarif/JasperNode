@@ -2,6 +2,11 @@
 
 JasperReports for NodeJS
 
+## Requirements
+- Java is already installed on your machine
+- [NodeJS](https://nodejs.org/) 8.0 or greater
+- [NPM](https://www.npmjs.com/) 3.0 or greater
+
 ## Installation
     npm install jaspernode -S
 

@@ -1,6 +1,6 @@
 {
   "name": "jaspernode",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "JasperReports for NodeJS",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "repository" : { 
+    "type" : "git", 
+    "url" : "https://github.com/ahmadarif/JasperNode"
   }
 }
