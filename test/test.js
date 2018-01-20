@@ -14,7 +14,7 @@ describe('JasperNodeTest', function() {
         } catch (e) {
             expect(e).to.be.an('error')
         }
-    })
+    }).timeout(5000)
 
     it('listParameters output test', async function() {
         const inputFile = path.join(__dirname, 'tmp', 'params.jasper')
@@ -23,7 +23,7 @@ describe('JasperNodeTest', function() {
 
         expect(command).to.be.a('string')
         expect(command).to.have.string('list_parameters')
-    })
+    }).timeout(5000)
     
     it('listParameters execute test', async function() {
         const inputFile = path.join(__dirname, 'tmp', 'params.jasper')
@@ -35,7 +35,7 @@ describe('JasperNodeTest', function() {
         expect(params).to.have.string('P myInt    java.lang.Integer')
         expect(params).to.have.string('P myDate   java.util.Date')
         expect(params).to.have.string('P myImage  java.lang.String  This is the description of parameter myImage')
-    })
+    }).timeout(5000)
     
     it('process output test', async function() {
         const resourceDir = path.join(__dirname, 'tmp')
@@ -56,7 +56,7 @@ describe('JasperNodeTest', function() {
         expect(command).to.have.string('-f')
         expect(command).to.have.string('-r')
         expect(command).to.have.string('-P')
-    })
+    }).timeout(5000)
 
     it('process execute test', async function() {
         const inputFile = path.join(__dirname, 'tmp', 'params.jasper')
