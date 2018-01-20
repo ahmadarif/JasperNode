@@ -6,7 +6,7 @@ node_js:
 sudo: false
 
 before_script:
-  - chmod -R +x ./travis/build/ahmadarif/JasperNode/JasperStarter/bin
+  - chmod +x -R ./travis/build/ahmadarif/JasperNode/JasperStarter/bin
 
 install:
   - npm install
