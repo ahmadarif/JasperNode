@@ -1,4 +1,4 @@
-# JasperNode [![Build Status](https://travis-ci.org/ahmadarif/JasperNode.svg?branch=master)](https://travis-ci.org/ahmadarif/JasperNode) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ahmadarif/JasperNode/issues)
+# JasperNode [![Build Status](https://travis-ci.org/ahmadarif/JasperNode.svg?branch=master)](https://travis-ci.org/ahmadarif/JasperNode) [![npm version](https://badge.fury.io/js/jaspernode.svg)](https://badge.fury.io/js/jaspernode) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ahmadarif/JasperNode/issues)
 
 JasperReports for NodeJS
 
