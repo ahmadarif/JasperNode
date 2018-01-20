@@ -5,6 +5,10 @@ node_js:
 
 sudo: false
 
+cache:
+  directories:
+  - node_modules
+
 before_script:
   - chmod +x -R /home/travis/build/ahmadarif/JasperNode/JasperStarter/bin
 

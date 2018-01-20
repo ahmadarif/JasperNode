@@ -73,5 +73,5 @@ describe('JasperNodeTest', function() {
         
         expect(filePath).to.be.a('string')
         expect(filePath).to.have.string(path.join('tmp', 'output.pdf'))
-    })
+    }).timeout(5000)
 })
