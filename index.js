@@ -17,19 +17,14 @@ class JasperNode {
         this.outputFile = outputFile
         this.format = format
 
-        if (!this.resourcePath) {
-            this.resourcePath = path.dirname(this.inputFile)
-        }
+        if (!this.resourcePath) this.resourcePath = path.dirname(this.inputFile)
 
         this.command = this.executable
         this.command += ' process '
         this.command += inputFile
         this.command += ' -o ' + outputFile
         this.command += ' -f ' + format
-
-        if (this.resourcePath) {
-            this.command += ' -r ' + this.resourcePath
-        }
+        this.command += ' -r ' + this.resourcePath
 
         this.command += ' -P'
         for (var key in parameters) {
@@ -43,10 +38,6 @@ class JasperNode {
         this.inputFile = inputFile
         this.outputFile = null
         this.format = null
-
-        if (!this.resourcePath) {
-            this.resourcePath = path.dirname(this.inputFile)
-        }
 
         this.command = this.executable
         this.command += ' list_parameters ' + inputFile

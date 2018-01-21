@@ -7,7 +7,7 @@ var JasperError = require('../JasperError')
 
 describe('JasperNodeTest', function() {
     it('should error JasperError (file not found)', async function() {
-        const inputFile = path.join(__dirname, 'tmp', 'fakeFile.jasper')
+        const inputFile = path.join(__dirname, '..', 'sample', 'fakeFile.jasper')
         const jasper = new JasperNode()
         try {
             const params = await jasper.listParameters(inputFile).execute()
@@ -17,7 +17,7 @@ describe('JasperNodeTest', function() {
     }).timeout(5000)
 
     it('listParameters output test', async function() {
-        const inputFile = path.join(__dirname, 'tmp', 'params.jasper')
+        const inputFile = path.join(__dirname, '..', 'sample', 'params.jasper')
         const jasper = new JasperNode()
         const command = await jasper.listParameters(inputFile).output()
 
@@ -26,7 +26,7 @@ describe('JasperNodeTest', function() {
     }).timeout(5000)
     
     it('listParameters execute test', async function() {
-        const inputFile = path.join(__dirname, 'tmp', 'params.jasper')
+        const inputFile = path.join(__dirname, '..', 'sample', 'params.jasper')
         const jasper = new JasperNode()
         const params = await jasper.listParameters(inputFile).execute()
 
@@ -39,8 +39,8 @@ describe('JasperNodeTest', function() {
     
     it('process output test', async function() {
         const resourceDir = path.join(__dirname, 'tmp')
-        const inputFile = path.join(__dirname, 'tmp', 'params.jasper')
-        const outputFile = path.join(__dirname, 'tmp', 'output')
+        const inputFile = path.join(__dirname, '..', 'sample', 'params.jasper')
+        const outputFile = path.join(__dirname, '..', 'sample', 'output')
         
         const jasper = new JasperNode(resourceDir)
         const params = {
@@ -58,9 +58,9 @@ describe('JasperNodeTest', function() {
         expect(command).to.have.string('-P')
     }).timeout(5000)
 
-    it('process execute test', async function() {
-        const inputFile = path.join(__dirname, 'tmp', 'params.jasper')
-        const outputFile = path.join(__dirname, 'tmp', 'output')
+    it('process execute test 1', async function() {
+        const inputFile = path.join(__dirname, '..', 'sample', 'params.jasper')
+        const outputFile = path.join(__dirname, '..', 'sample', 'output')
         const format = 'pdf' // list of format -> 'pdf', 'rtf', 'xls', 'xlsx', 'docx', 'odt', 'ods', 'pptx', 'csv', 'html', 'xhtml', 'xml', 'jrprint'
         
         const jasper = new JasperNode() // by default resourceDir is equal with inputFile directory
@@ -72,6 +72,23 @@ describe('JasperNodeTest', function() {
         const filePath = await jasper.process(inputFile, outputFile, params, format).execute()
         
         expect(filePath).to.be.a('string')
-        expect(filePath).to.have.string(path.join('tmp', 'output.pdf'))
+        expect(filePath).to.have.string(path.join(__dirname, '../sample/output', 'params.pdf'))
+    }).timeout(5000)
+
+    it('process execute test 2', async function() {
+        const inputFile = path.join(__dirname, '..', 'sample', 'params.jasper')
+        const outputFile = path.join(__dirname, '../sample/params')
+        const format = 'pdf' // list of format -> 'pdf', 'rtf', 'xls', 'xlsx', 'docx', 'odt', 'ods', 'pptx', 'csv', 'html', 'xhtml', 'xml', 'jrprint'
+        
+        const jasper = new JasperNode() // by default resourceDir is equal with inputFile directory
+        const params = {
+            myString: jasper.quotes('My String'),
+            myInt: 100,
+            myImage: jasper.quotes('sample.jpg')
+        }
+        const filePath = await jasper.process(inputFile, outputFile, params, format).execute()
+        
+        expect(filePath).to.be.a('string')
+        expect(filePath).to.have.string(path.join(__dirname, '..', 'sample', 'params.pdf'))
     }).timeout(5000)
 })
