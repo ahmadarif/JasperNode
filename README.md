@@ -43,6 +43,13 @@ class JasperController {
 ## Tests
     npm test
 
+## Code Coverage
+    npm run cover
+
+## Thanks
+- Thanks to [Cenote GmbH](http://www.cenote.de/) for the [JasperStarter](http://jasperstarter.sourceforge.net/) tool.
+- Thanks to [Hélder Duarte](https://github.com/cossou) for the [JasperPH](https://github.com/cossou/JasperPHP) repository
+
 ## Contributing
 
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
