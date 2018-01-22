@@ -48,7 +48,7 @@ class JasperController {
 
 ## Thanks
 - Thanks to [Cenote GmbH](http://www.cenote.de/) for the [JasperStarter](http://jasperstarter.sourceforge.net/) tool.
-- Thanks to [Hélder Duarte](https://github.com/cossou) for the [JasperPH](https://github.com/cossou/JasperPHP) repository
+- Thanks to [Hélder Duarte](https://github.com/cossou) for the [JasperPHP](https://github.com/cossou/JasperPHP) repository
 
 ## Contributing
 
