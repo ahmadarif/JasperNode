@@ -1,4 +1,4 @@
-# JasperNode [![Build Status](https://travis-ci.org/ahmadarif/JasperNode.svg?branch=master)](https://travis-ci.org/ahmadarif/JasperNode) [![Coverage Status](https://coveralls.io/repos/github/ahmadarif/JasperNode/badge.svg?branch=master)](https://coveralls.io/github/ahmadarif/JasperNode?branch=master) [![npm version](https://badge.fury.io/js/jaspernode.svg)](https://badge.fury.io/js/jaspernode) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/ahmadarif/JasperNode/issues)
+# JasperNode [![BuildStatusBadge]][BuildStatusLink] [![CoverageBadge]][CoverageLink] [![NPMBadge]][NPMLink] [![ContributionBadge]][ContributionLink]
 
 JasperReports for NodeJS
 
@@ -53,3 +53,12 @@ class JasperController {
 ## Contributing
 
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
+
+[BuildStatusBadge]:https://travis-ci.org/ahmadarif/JasperNode.svg?branch=master
+[BuildStatusLink]:https://travis-ci.org/ahmadarif/JasperNode
+[CoverageBadge]:https://coveralls.io/repos/github/ahmadarif/JasperNode/badge.svg?branch=master
+[CoverageLink]:https://coveralls.io/github/ahmadarif/JasperNode?branch=master
+[NPMBadge]:https://badge.fury.io/js/jaspernode.svg
+[NPMLink]:https://badge.fury.io/js/jaspernode
+[ContributionBadge]:https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
+[ContributionLink]:https://github.com/ahmadarif/JasperNode/issues
