@@ -57,6 +57,7 @@ class JasperNode {
             // optional parameters
             if (connections.hasOwnProperty('password')) this.command += ' -p ' + connections.password
             if (connections.hasOwnProperty('port')) this.command += ' --db-port ' + connections.port
+            if (connections.hasOwnProperty('sid')) this.command += ' --db-sid ' + connections.sid
         }
 
         return this
