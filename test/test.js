@@ -185,6 +185,33 @@ describe('JasperNodeTest', function() {
 
     }).timeout(0)
     
+    it('process database test oracle', async function() {
+        const inputFile = path.join(__dirname, '../sample/database.jasper')
+        const outputFile = path.join(__dirname, '../sample')
+        
+        const jasper = new JasperNode()
+        const connections = {
+            driver: 'oracle',
+            host: 'localhost',
+            port: 1521,        // optional, default port driver
+            username: 'root',
+            password: 'admin', // optional if using password NO
+            sid: 'test'
+        }
+
+        try {
+            const filePath = await jasper.process(inputFile, outputFile, null, connections).execute()
+            
+            expect(filePath).to.be.a('string')
+            expect(filePath).to.have.string(path.join(__dirname, '../sample/database.pdf'))
+            
+            if (isAutoDelete) fs.unlinkSync(filePath)
+        } catch (e) {
+            expect(e).to.be.an('error')
+        }
+
+    }).timeout(0)
+
     it('process database test 2', async function() {
         const inputFile = path.join(__dirname, '../sample/database.jasper')
         const outputFile = path.join(__dirname, '../sample')
